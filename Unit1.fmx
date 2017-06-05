@@ -1,0 +1,60 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object memoMyStuff: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Top
+    Size.Width = 640.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnExit = memoMyStuffExit
+    Viewport.Width = 636.000000000000000000
+    Viewport.Height = 101.000000000000000000
+  end
+  object layButtons: TLayout
+    Align = Top
+    Position.Y = 105.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object btnJoin: TButton
+      Align = Left
+      Size.Width = 129.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Join'
+      OnClick = btnJoinClick
+    end
+  end
+  object TetheringManager1: TTetheringManager
+    OnPairedFromLocal = TetheringManager1PairedFromLocal
+    OnPairedToRemote = TetheringManager1PairedToRemote
+    OnUnPairManager = TetheringManager1UnPairManager
+    Text = 'TetheringManager1'
+    AllowedAdapters = 'Network'
+    Left = 256
+    Top = 112
+  end
+  object Profile1: TTetheringAppProfile
+    Manager = TetheringManager1
+    Text = 'Profile1'
+    Group = 'problems'
+    Actions = <>
+    Resources = <>
+    Left = 248
+    Top = 168
+  end
+end
